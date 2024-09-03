@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: hsl(240, 20%, 97%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.wrapper button {
+  background-color: hsl(240, 20%, 97%);
+  color: gray;
+  width: 125px;
+  height: 125px;
+  font-size: 3rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 8px 8px 8px hsla(0, 100%, 0%, 0.05),
+  -8px -8px 8px hsl(0, 0%, 100%);
+}
+
+.wrapper button.active {
+  box-shadow: 8px 8px 8px hsla(0, 100%, 0%, 0.05) inset,
+  -8px -8px 8px hsl(0, 0%, 100%) inset;
+}
