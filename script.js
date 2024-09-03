@@ -1,8 +1,16 @@
-const gameScore = {
-  wins: 0,
-  losses: 0,
-  ties: 0
-};
+const gameScore = getScoreFromStorage();
+
+function saveScoreToStorage() {
+  localStorage.setItem('score', JSON.stringify(gameScore));
+}
+
+function getScoreFromStorage() {
+  return JSON.parse(localStorage.getItem('score')) || {
+    wins: 0,
+    losses: 0,
+    ties: 0
+  };
+}
 
 function pickComputerMove() {
   const randomNumber = Math.random();
@@ -20,8 +28,11 @@ function pickComputerMove() {
   return computerMove;
 }
 
-const curResult = document.querySelector('.js-cur-result');
-const finalResult = document.querySelector('.js-final-result');
+const resultInfo = document.querySelector('.js-result-info');
+resultInfo.innerHTML = `
+  <p>Ready to begin?</p>
+  <p>Wins: ${gameScore.wins}, Losses: ${gameScore.losses}, Ties: ${gameScore.ties}.</p>
+`;
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
@@ -62,12 +73,11 @@ function playGame(playerMove) {
     gameScore.ties++;
   }
 
-  curResult.textContent = `
-    You picked ${playerMove}. Computer picked ${computerMove}. ${result}.
-  `;
+  saveScoreToStorage();
 
-  finalResult.textContent = `
-    Wins: ${gameScore.wins}, Losses: ${gameScore.losses}, Ties: ${gameScore.ties}.
+  resultInfo.innerHTML = `
+    <p>You picked ${playerMove}. Computer picked ${computerMove}. ${result}.</p>
+    <p>Wins: ${gameScore.wins}, Losses: ${gameScore.losses}, Ties: ${gameScore.ties}.</p>
   `;
 }
 
@@ -76,6 +86,13 @@ reset.addEventListener('click', () => {
   gameScore.wins = 0;
   gameScore.losses = 0;
   gameScore.ties = 0;
+
+  saveScoreToStorage();
+
+  resultInfo.innerHTML = `
+    <p>Score was reset!</p>
+    <p>Wins: ${gameScore.wins}, Losses: ${gameScore.losses}, Ties: ${gameScore.ties}.</p>
+  `;
 });
 
 const gameButtons = document.querySelectorAll('.js-button');
