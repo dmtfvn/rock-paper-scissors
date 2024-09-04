@@ -1,3 +1,9 @@
+:root {
+  --yt-clr: hsl(0, 0%, 100%);
+  --yt-ish-clr: hsl(240, 20%, 97%);
+  --gy-ish-clr: hsla(0, 100%, 0%, 0.05);
+}
+
 *,
 *::before,
 *::after {
@@ -10,7 +16,7 @@
 }
 
 body {
-  background-color: hsl(240, 20%, 97%);
+  background-color: var(--yt-ish-clr);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -19,7 +25,7 @@ body {
   gap: 35px;
 }
 
-.wrapper {
+.main-button-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,22 +34,22 @@ body {
   gap: 50px;
 }
 
-.wrapper button {
-  background-color: hsl(240, 20%, 97%);
-  color: gray;
-  width: 125px;
-  height: 125px;
+.main-button-wrapper button {
+  background-color: var(--yt-ish-clr);
+  color: hsl(0, 0%, 50%);
+  width: 120px;
+  height: 120px;
   font-size: 3rem;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  box-shadow: 8px 8px 8px hsla(0, 100%, 0%, 0.05),
-  -8px -8px 8px hsl(0, 0%, 100%);
+  box-shadow: 8px 8px 8px var(--gy-ish-clr),
+  -8px -8px 8px var(--yt-clr);
 }
 
-.wrapper button.active {
-  box-shadow: 8px 8px 8px hsla(0, 100%, 0%, 0.05) inset,
-  -8px -8px 8px hsl(0, 0%, 100%) inset;
+.main-button-wrapper button.active {
+  box-shadow: 8px 8px 8px var(--gy-ish-clr) inset,
+  -8px -8px 8px var(--yt-clr) inset;
 }
 
 .js-result-info {
@@ -54,7 +60,17 @@ body {
   gap: 15px;
 }
 
-.js-reset {
+.js-result-info span {
+  color: lightblue;
+  text-transform: capitalize;
+}
+
+.js-result-info span:last-child {
+  color: red;
+}
+
+.js-reset-button {
+  background-color: hsl(0, 0%, 86%);
   padding: 5px 10px;
   border: none;
   border-radius: 12px;

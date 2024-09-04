@@ -28,10 +28,18 @@ function pickComputerMove() {
   return computerMove;
 }
 
+function renderGameScore() {
+  const score = `
+    <p>Wins: ${gameScore.wins}, Losses: ${gameScore.losses}, Ties: ${gameScore.ties}.</p>
+  `;
+
+  return score;
+}
+
 const resultInfo = document.querySelector('.js-result-info');
 resultInfo.innerHTML = `
-  <p>Ready to begin?</p>
-  <p>Wins: ${gameScore.wins}, Losses: ${gameScore.losses}, Ties: ${gameScore.ties}.</p>
+  <p>Ready to play?</p>
+  ${renderGameScore()}
 `;
 
 function playGame(playerMove) {
@@ -76,13 +84,13 @@ function playGame(playerMove) {
   saveScoreToStorage();
 
   resultInfo.innerHTML = `
-    <p>You picked ${playerMove}. Computer picked ${computerMove}. ${result}.</p>
-    <p>Wins: ${gameScore.wins}, Losses: ${gameScore.losses}, Ties: ${gameScore.ties}.</p>
+    <p>You picked <span>${playerMove}</span>. Computer picked <span>${computerMove}</span>. <span>${result}</span>.</p>
+    ${renderGameScore()}
   `;
 }
 
-const reset = document.querySelector('.js-reset');
-reset.addEventListener('click', () => {
+const resetButton = document.querySelector('.js-reset-button');
+resetButton.addEventListener('click', () => {
   gameScore.wins = 0;
   gameScore.losses = 0;
   gameScore.ties = 0;
@@ -91,12 +99,12 @@ reset.addEventListener('click', () => {
 
   resultInfo.innerHTML = `
     <p>Score was reset!</p>
-    <p>Wins: ${gameScore.wins}, Losses: ${gameScore.losses}, Ties: ${gameScore.ties}.</p>
+    ${renderGameScore()}
   `;
 });
 
-const gameButtons = document.querySelectorAll('.js-button');
-gameButtons.forEach((button) => {
+const mainButtons = document.querySelectorAll('.js-main-button');
+mainButtons.forEach((button) => {
   button.addEventListener('mousedown', () => {
     button.classList.add('active');
 
