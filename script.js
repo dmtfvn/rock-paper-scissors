@@ -30,17 +30,33 @@ function pickComputerMove() {
 
 function renderGameScore() {
   const score = `
-    <p>Wins: ${gameScore.wins}, Losses: ${gameScore.losses}, Ties: ${gameScore.ties}.</p>
+    <p>Wins ${gameScore.wins} ~ Losses ${gameScore.losses} ~ Ties ${gameScore.ties}</p>
   `;
 
   return score;
 }
 
-const resultInfo = document.querySelector('.js-result-info');
-resultInfo.innerHTML = `
-  <p>Ready to play?</p>
-  ${renderGameScore()}
-`;
+const gameBoard = document.querySelector('.js-game-board');
+
+function renderGameBoard(player, computer, result) {
+  gameBoard.innerHTML = `
+    <div class="player-result-computer">
+      <div class="player">
+        <span>🙂</span>
+        <p>${player}</p>
+      </div>
+      <p class="result">${result}</p>
+      <div class="computer">
+        <span>🤖</span>
+        <p>${computer}</p>
+      </div>
+    </div>
+  `;
+}
+renderGameBoard('', '', '');
+
+const gameResult = document.querySelector('.js-game-result');
+gameResult.innerHTML = `${renderGameScore()}`;
 
 function playGame(playerMove) {
   const computerMove = pickComputerMove();
@@ -51,7 +67,7 @@ function playGame(playerMove) {
     if (computerMove === 'rock') {
       result = 'Tie';
     } else if (computerMove === 'paper') {
-      result = 'You lose';
+      result = 'You Lose';
     } else if (computerMove === 'scissors') {
       result = 'You Win';
     }
@@ -61,11 +77,11 @@ function playGame(playerMove) {
     } else if (computerMove === 'paper') {
       result = 'Tie';
     } else if (computerMove === 'scissors') {
-      result = 'You lose';
+      result = 'You Lose';
     }
   } else if (playerMove === 'scissors') {
     if (computerMove === 'rock') {
-      result = 'You lose';
+      result = 'You Lose';
     } else if (computerMove === 'paper') {
       result = 'You Win';
     } else if (computerMove === 'scissors') {
@@ -75,18 +91,16 @@ function playGame(playerMove) {
 
   if (result === 'You Win') {
     gameScore.wins++;
-  } else if (result === 'You lose') {
+  } else if (result === 'You Lose') {
     gameScore.losses++;
   } else if (result === 'Tie') {
     gameScore.ties++;
   }
 
   saveScoreToStorage();
+  renderGameBoard(playerMove, computerMove, result);
 
-  resultInfo.innerHTML = `
-    <p>You picked <span>${playerMove}</span>. Computer picked <span>${computerMove}</span>. <span>${result}</span>.</p>
-    ${renderGameScore()}
-  `;
+  gameResult.innerHTML = `${renderGameScore()}`;
 }
 
 const resetButton = document.querySelector('.js-reset-button');
@@ -96,11 +110,9 @@ resetButton.addEventListener('click', () => {
   gameScore.ties = 0;
 
   saveScoreToStorage();
+  renderGameBoard('', '', '');
 
-  resultInfo.innerHTML = `
-    <p>Score was reset!</p>
-    ${renderGameScore()}
-  `;
+  gameResult.innerHTML = `${renderGameScore()}`;
 });
 
 const mainButtons = document.querySelectorAll('.js-main-button');

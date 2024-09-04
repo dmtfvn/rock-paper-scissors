@@ -1,7 +1,9 @@
 :root {
   --yt-clr: hsl(0, 0%, 100%);
   --yt-ish-clr: hsl(240, 20%, 97%);
+  --gy-clr: hsl(0, 0%, 89%);
   --gy-ish-clr: hsla(0, 100%, 0%, 0.05);
+  --text-clr: hsl(0, 1%, 20%);
 }
 
 *,
@@ -15,14 +17,76 @@
   padding: 0;
 }
 
+html {
+  color: var(--text-clr);
+  font-family: Roboto, Arial;
+  font-size: 1rem;
+}
+
 body {
   background-color: var(--yt-ish-clr);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.game-title {
+  color: hsl(0, 5%, 50%);
+  font-family: Rubik Puddles;
+  font-size: 2rem;
+}
+
+.game-board {
+  max-width: 400px;
+  width: 100%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  gap: 35px;
+}
+
+.player-result-computer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.player-result-computer span {
+  font-size: 1.5rem;
+}
+
+.player p,
+.computer p {
+  background-color: var(--gy-clr);
+  color: var(--text-clr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 25px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.computer {
+  display: flex;
+  flex-direction: column;
+}
+
+.computer span {
+  align-self: flex-end;
+}
+
+.result {
+  font-family: Fredericka the Great;
+  margin-top: auto;
+  margin-bottom: 4.5px;
+}
+
+.js-game-result {
+  font-family: Fredericka the Great;
 }
 
 .main-button-wrapper {
@@ -36,10 +100,11 @@ body {
 
 .main-button-wrapper button {
   background-color: var(--yt-ish-clr);
-  color: hsl(0, 0%, 50%);
+  font-family: Rubik Puddles, Arial;
+  color: hsl(0, 6%, 78%);
   width: 120px;
   height: 120px;
-  font-size: 3rem;
+  font-size: 4rem;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -52,25 +117,9 @@ body {
   -8px -8px 8px var(--yt-clr) inset;
 }
 
-.js-result-info {
-  max-width: 375px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.js-result-info span {
-  color: lightblue;
-  text-transform: capitalize;
-}
-
-.js-result-info span:last-child {
-  color: red;
-}
-
 .js-reset-button {
-  background-color: hsl(0, 0%, 86%);
+  background-color: var(--gy-clr);
+  font-size: 0.8rem;
   padding: 5px 10px;
   border: none;
   border-radius: 12px;
