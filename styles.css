@@ -3,7 +3,6 @@
   --yt-ish-clr: hsl(240, 20%, 97%);
   --gy-clr: hsl(0, 0%, 89%);
   --gy-ish-clr: hsla(0, 100%, 0%, 0.05);
-  --text-clr: hsl(0, 1%, 20%);
 }
 
 *,
@@ -18,7 +17,7 @@
 }
 
 html {
-  color: var(--text-clr);
+  color: hsl(0, 1%, 20%);
   font-family: Roboto, Arial;
   font-size: 1rem;
 }
@@ -34,7 +33,7 @@ body {
 
 .game-title {
   color: hsl(0, 5%, 50%);
-  font-family: Rubik Puddles;
+  font-family: Rubik Puddles, Arial;
   font-size: 2rem;
 }
 
@@ -50,17 +49,21 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 0 5px;
+  padding: 0 10px;
 }
 
 .player-result-computer span {
   font-size: 1.5rem;
 }
 
-.player p,
-.computer p {
+.avatar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar p {
   background-color: var(--gy-clr);
-  color: var(--text-clr);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -70,51 +73,39 @@ body {
   margin-top: 10px;
 }
 
-.computer {
-  display: flex;
-  flex-direction: column;
-}
-
-.computer span {
-  align-self: flex-end;
+.result,
+.game-result {
+  font-family: Fredericka the Great, Arial;
 }
 
 .result {
-  font-family: Fredericka the Great;
   margin-top: auto;
   margin-bottom: 4.5px;
 }
 
-.js-game-result {
-  font-family: Fredericka the Great;
-}
-
 .main-button-wrapper {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 25px;
-  flex-wrap: wrap;
+  padding: 0 10px;
   gap: 50px;
 }
 
 .main-button-wrapper button {
   background-color: var(--yt-ish-clr);
-  font-family: Rubik Puddles, Arial;
   color: hsl(0, 6%, 78%);
+  font-family: Rubik Puddles, Arial;
   width: 120px;
   height: 120px;
   font-size: 4rem;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  box-shadow: 8px 8px 8px var(--gy-ish-clr),
-  -8px -8px 8px var(--yt-clr);
+  box-shadow: 5px 5px 5px var(--gy-ish-clr),
+  -5px -5px 5px var(--yt-clr);
 }
 
 .main-button-wrapper button.active {
-  box-shadow: 8px 8px 8px var(--gy-ish-clr) inset,
-  -8px -8px 8px var(--yt-clr) inset;
+  box-shadow: 5px 5px 5px var(--gy-ish-clr) inset,
+  -5px -5px 5px var(--yt-clr) inset;
 }
 
 .js-reset-button {
@@ -124,4 +115,36 @@ body {
   border: none;
   border-radius: 12px;
   cursor: pointer;
+}
+
+@media (max-width: 478px) {
+  .main-button-wrapper {
+    gap: 40px;
+  }
+  .main-button-wrapper button {
+    width: 100px;
+    height: 100px;
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 398px) {
+  .game-title {
+    font-size: 1.5rem;
+  }
+  .main-button-wrapper button {
+    width: 80px;
+    height: 80px;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 338px) {
+  .main-button-wrapper {
+    gap: 25px;
+  }
+  .main-button-wrapper button {
+    width: 60px;
+    height: 60px;
+  }
 }

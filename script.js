@@ -41,12 +41,12 @@ const gameBoard = document.querySelector('.js-game-board');
 function renderGameBoard(player, computer, result) {
   gameBoard.innerHTML = `
     <div class="player-result-computer">
-      <div class="player">
+      <div class="avatar">
         <span>🙂</span>
         <p>${player}</p>
       </div>
       <p class="result">${result}</p>
-      <div class="computer">
+      <div class="avatar">
         <span>🤖</span>
         <p>${computer}</p>
       </div>
