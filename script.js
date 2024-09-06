@@ -1,9 +1,3 @@
-const gameScore = getScoreFromStorage();
-
-function saveScoreToStorage() {
-  localStorage.setItem('score', JSON.stringify(gameScore));
-}
-
 function getScoreFromStorage() {
   return JSON.parse(localStorage.getItem('score')) || {
     wins: 0,
@@ -12,28 +6,10 @@ function getScoreFromStorage() {
   };
 }
 
-function pickComputerMove() {
-  const randomNumber = Math.random();
+const gameScore = getScoreFromStorage();
 
-  let computerMove = '';
-
-  if (randomNumber >= 0 && randomNumber < 1 / 3) {
-    computerMove = 'rock';
-  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
-    computerMove = 'paper';
-  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
-    computerMove = 'scissors';
-  }
-
-  return computerMove;
-}
-
-function renderGameScore() {
-  const score = `
-    <p>Wins ${gameScore.wins} ~ Losses ${gameScore.losses} ~ Ties ${gameScore.ties}</p>
-  `;
-
-  return score;
+function saveScoreToStorage() {
+  localStorage.setItem('score', JSON.stringify(gameScore));
 }
 
 const gameBoard = document.querySelector('.js-game-board');
@@ -55,11 +31,35 @@ function renderGameBoard(player, computer, result) {
 }
 renderGameBoard('', '', '');
 
+function renderGameScore() {
+  const score = `
+    <p>Wins ${gameScore.wins} ~ Losses ${gameScore.losses} ~ Ties ${gameScore.ties}</p>
+  `;
+
+  return score;
+}
+
 const gameResult = document.querySelector('.js-game-result');
 gameResult.innerHTML = `${renderGameScore()}`;
 
+function generateComputerMove() {
+  const randomNumber = Math.random();
+
+  let computerMove = '';
+
+  if (randomNumber >= 0 && randomNumber < 1 / 3) {
+    computerMove = 'rock';
+  } else if (randomNumber >= 1 / 3 && randomNumber < 2 / 3) {
+    computerMove = 'paper';
+  } else if (randomNumber >= 2 / 3 && randomNumber < 1) {
+    computerMove = 'scissors';
+  }
+
+  return computerMove;
+}
+
 function playGame(playerMove) {
-  const computerMove = pickComputerMove();
+  const computerMove = generateComputerMove();
 
   let result = '';
 
