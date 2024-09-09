@@ -1,6 +1,6 @@
 ## Rock Paper Scissors
 
-A single-page application, representing the classic "Rock, Paper, Scissors" game by an intuitive and simple, yet beautifully designed user interface. After displaying the outcome of a single round, every win, loss, or tie is saved.
+A single-page application, representing the classic "Rock, Paper, Scissors" game in a simple and intuitive, yet beautifully designed user interface. After displaying the outcome of a single round, every win, loss, or tie is saved.
 
 **Note:** Clearing your browser's data, on which the game is played, will result in a deletion of the current score.  
 This process **cannot** be undone.
