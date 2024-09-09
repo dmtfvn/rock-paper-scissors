@@ -149,3 +149,23 @@ body {
     height: 60px;
   }
 }
+
+@media (max-height: 388px) {
+  .main-button-wrapper {
+    gap: 55px;
+  }
+  .main-button-wrapper button {
+    width: 90px;
+    height: 90px;
+  }
+}
+
+@media (max-height: 348px) {
+  .main-button-wrapper {
+    gap: 75px;
+  }
+  .main-button-wrapper button {
+    width: 70px;
+    height: 70px;
+  }
+}
