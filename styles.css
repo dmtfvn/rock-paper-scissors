@@ -58,8 +58,8 @@ body {
   align-items: center;
 }
 
-.avatar span {
-  font-size: 1.5rem;
+.avatar img {
+  width: 35px;;
 }
 
 .avatar p {

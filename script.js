@@ -18,12 +18,12 @@ function renderGameBoard(player, computer, result) {
   gameBoard.innerHTML = `
     <div class="player-result-computer">
       <div class="avatar">
-        <span>&#128578;</span>
+        <img src="icons/player.png">
         <p>${player}</p>
       </div>
       <p class="result">${result}</p>
       <div class="avatar">
-        <span>&#129302;</span>
+        <img src="icons/computer.png">
         <p>${computer}</p>
       </div>
     </div>
