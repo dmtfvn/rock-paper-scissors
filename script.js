@@ -12,35 +12,32 @@ function saveScoreToStorage() {
   localStorage.setItem('score', JSON.stringify(gameScore));
 }
 
-const gameBoard = document.querySelector('.js-game-board');
-
 function renderGameBoard(player, computer, result) {
-  gameBoard.innerHTML = `
-    <div class="player-result-computer">
-      <div class="avatar">
-        <img src="icons/player.png">
-        <p>${player}</p>
-      </div>
-      <p class="result">${result}</p>
-      <div class="avatar">
-        <img src="icons/computer.png">
-        <p>${computer}</p>
-      </div>
-    </div>
-  `;
+  const playerChoice = document.querySelector('.player-choice')
+  playerChoice.textContent = `${player}`;
+
+  const computerChoice = document.querySelector('.computer-choice')
+  computerChoice.textContent = `${computer}`;
+
+  const outcome = document.querySelector('.result')
+  outcome.textContent = `${result}`;
 }
 renderGameBoard('', '', '');
 
 function renderGameScore() {
-  const score = `
-    <p>Wins ${gameScore.wins} ~ Losses ${gameScore.losses} ~ Ties ${gameScore.ties}</p>
-  `;
+  const wins = document.querySelector('.wins');
+  wins.textContent = `${gameScore.wins}`;
 
-  return score;
+  const losses = document.querySelector('.losses');
+  losses.textContent = `${gameScore.losses}`;
+
+  const ties = document.querySelector('.ties');
+  ties.textContent = `${gameScore.ties}`;
 }
 
-const gameResult = document.querySelector('.js-game-result');
-gameResult.innerHTML = `${renderGameScore()}`;
+window.addEventListener('DOMContentLoaded', () => {
+  renderGameScore();
+});
 
 function generateComputerMove() {
   const randomNumber = Math.random();
@@ -100,7 +97,7 @@ function playGame(playerMove) {
   saveScoreToStorage();
   renderGameBoard(playerMove, computerMove, result);
 
-  gameResult.innerHTML = `${renderGameScore()}`;
+  renderGameScore();
 }
 
 const resetButton = document.querySelector('.js-reset-button');
@@ -112,7 +109,7 @@ resetButton.addEventListener('click', () => {
   saveScoreToStorage();
   renderGameBoard('', '', '');
 
-  gameResult.innerHTML = `${renderGameScore()}`;
+  renderGameScore();
 });
 
 const mainButtons = document.querySelectorAll('.js-main-button');

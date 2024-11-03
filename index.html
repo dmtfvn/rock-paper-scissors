@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,10 +21,25 @@
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
+
 <body>
   <p class="game-title">Rock Paper Scissors</p>
-  <div class="game-board js-game-board"></div>
-  <p class="game-result js-game-result"></p>
+  <div class="game-board js-game-board">
+    <div class="player-result-computer">
+      <div class="avatar">
+        <img src="icons/player.png">
+        <p class="player-choice"></p>
+      </div>
+      <p class="result"></p>
+      <div class="avatar">
+        <img src="icons/computer.png">
+        <p class="computer-choice"></p>
+      </div>
+    </div>
+  </div>
+  <p class="game-result">
+    Wins <span class="wins"></span> ~ Losses <span class="losses"></span> ~ Ties <span class="ties"></span>
+  </p>
   <div class="main-button-wrapper">
     <button class="js-main-button">R</button>
     <button class="js-main-button">P</button>
@@ -31,4 +47,5 @@
   </div>
   <button class="js-reset-button">Reset Score</button>
 </body>
+
 </html>

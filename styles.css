@@ -59,7 +59,8 @@ body {
 }
 
 .avatar img {
-  width: 35px;;
+  width: 35px;
+  ;
 }
 
 .avatar p {
@@ -100,12 +101,12 @@ body {
   border-radius: 20px;
   cursor: pointer;
   box-shadow: 5px 5px 5px var(--gy-ish-clr),
-  -5px -5px 5px var(--yt-clr);
+    -5px -5px 5px var(--yt-clr);
 }
 
 .main-button-wrapper button.active {
   box-shadow: 5px 5px 5px var(--gy-ish-clr) inset,
-  -5px -5px 5px var(--yt-clr) inset;
+    -5px -5px 5px var(--yt-clr) inset;
 }
 
 .js-reset-button {
@@ -122,6 +123,7 @@ body {
   .main-button-wrapper {
     gap: 40px;
   }
+
   .main-button-wrapper button {
     width: 100px;
     height: 100px;
@@ -132,6 +134,7 @@ body {
   .game-title {
     font-size: 1.5rem;
   }
+
   .main-button-wrapper button {
     width: 80px;
     height: 80px;
@@ -142,6 +145,7 @@ body {
   .main-button-wrapper {
     gap: 25px;
   }
+
   .main-button-wrapper button {
     width: 60px;
     height: 60px;
@@ -152,6 +156,7 @@ body {
   .main-button-wrapper {
     gap: 55px;
   }
+
   .main-button-wrapper button {
     width: 90px;
     height: 90px;
@@ -162,6 +167,7 @@ body {
   .main-button-wrapper {
     gap: 75px;
   }
+
   .main-button-wrapper button {
     width: 70px;
     height: 70px;
