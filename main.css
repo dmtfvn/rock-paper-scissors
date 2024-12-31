@@ -21,14 +21,8 @@ main {
   min-height: 100dvh;
 }
 
-main>input {
-  background-color: var(--gy-clr);
-  color: hsl(0, 1%, 60%);
-  font-size: 0.8em;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
+button {
+  -webkit-tap-highlight-color: transparent;
 }
 
 .game-title {
@@ -83,7 +77,7 @@ figure>p {
   width: min(400px, 100%);
 }
 
-.game-btns>input {
+.game-btns>button {
   background-color: var(--yt-ish-clr);
   color: hsl(0, 6%, 78%);
   font-family: Rubik Puddles, Arial, sans-serif;
@@ -93,16 +87,29 @@ figure>p {
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
   box-shadow:
     5px 5px 5px var(--gy-ish-clr),
     -5px -5px 5px var(--yt-clr);
 }
 
-.game-btns>input.active {
+.game-btns>button:active {
   box-shadow:
     5px 5px 5px var(--gy-ish-clr) inset,
     -5px -5px 5px var(--yt-clr) inset;
+}
+
+.reset-btn {
+  background-color: var(--gy-clr);
+  color: hsl(0, 1%, 60%);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.reset-btn:active {
+  background-color: hsl(0, 0%, 80%);
 }
 
 @media (min-width: 390px) {
@@ -114,7 +121,7 @@ figure>p {
     justify-content: space-between;
   }
 
-  .game-btns>input {
+  .game-btns>button {
     width: 100px;
     height: 100px;
   }
