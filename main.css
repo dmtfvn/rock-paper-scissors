@@ -33,6 +33,7 @@ main>input {
 
 main>input:active {
   background-color: hsl(0, 0%, 80%);
+  color: var(--yt-ish-clr);
   -webkit-tap-highlight-color: transparent;
 }
 
