@@ -93,13 +93,13 @@ figure>p {
   border: none;
   border-radius: 20px;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
   box-shadow:
     5px 5px 5px var(--gy-ish-clr),
     -5px -5px 5px var(--yt-clr);
 }
 
-.game-btns>input:active {
-  -webkit-tap-highlight-color: transparent;
+.game-btns>input.active {
   box-shadow:
     5px 5px 5px var(--gy-ish-clr) inset,
     -5px -5px 5px var(--yt-clr) inset;
