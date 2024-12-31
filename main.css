@@ -65,17 +65,17 @@ figure>p {
   margin-top: 10px;
 }
 
-.result {
-  margin-top: auto;
-  margin-bottom: 4.5px;
-}
-
 .result,
 .game-result {
   font-family: Fredericka the Great, Arial, sans-serif;
 }
 
-.btns-wrapper {
+.result {
+  margin-top: auto;
+  margin-bottom: 4.5px;
+}
+
+.game-btns {
   display: flex;
   justify-content: space-evenly;
   padding: 0 10px;
@@ -83,7 +83,7 @@ figure>p {
   width: min(400px, 100%);
 }
 
-.btns-wrapper>input {
+.game-btns>input {
   background-color: var(--yt-ish-clr);
   color: hsl(0, 6%, 78%);
   font-family: Rubik Puddles, Arial, sans-serif;
@@ -98,7 +98,7 @@ figure>p {
     -5px -5px 5px var(--yt-clr);
 }
 
-.btns-wrapper>input.active {
+.game-btns>input .active {
   box-shadow:
     5px 5px 5px var(--gy-ish-clr) inset,
     -5px -5px 5px var(--yt-clr) inset;
@@ -109,11 +109,11 @@ figure>p {
     font-size: 2em;
   }
 
-  .btns-wrapper {
+  .game-btns {
     justify-content: space-between;
   }
 
-  .btns-wrapper>input {
+  .game-btns>input {
     width: 100px;
     height: 100px;
   }
