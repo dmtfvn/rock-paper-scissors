@@ -99,7 +99,7 @@ figure>p {
     -5px -5px 5px var(--yt-clr);
 }
 
-.game-btns>input:active {
+.game-btns>input.active {
   box-shadow:
     5px 5px 5px var(--gy-ish-clr) inset,
     -5px -5px 5px var(--yt-clr) inset;
