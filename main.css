@@ -40,6 +40,7 @@ main>input {
 .game-board {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
   width: min(400px, 100%);
   padding: 0 10px;
 }
@@ -68,11 +69,6 @@ figure>p {
 .result,
 .game-result {
   font-family: Fredericka the Great, Arial, sans-serif;
-}
-
-.result {
-  margin-top: auto;
-  margin-bottom: 4.5px;
 }
 
 .game-btns {
