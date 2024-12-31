@@ -31,12 +31,6 @@ main>input {
   cursor: pointer;
 }
 
-main>input:active {
-  background-color: hsl(0, 0%, 80%);
-  color: var(--yt-ish-clr);
-  -webkit-tap-highlight-color: transparent;
-}
-
 .game-title {
   color: hsl(0, 5%, 50%);
   font-family: Rubik Puddles, Arial, sans-serif;
