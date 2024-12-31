@@ -29,7 +29,15 @@ gameBtns.forEach(el => {
     }
   });
 
-  el.addEventListener('mouseup', () => {
+  window.addEventListener('mouseup', () => {
+    el.classList.remove('active');
+  });
+
+  el.addEventListener('touchstart', () => {
+    el.classList.add('active');
+  });
+
+  window.addEventListener('touchend', () => {
     el.classList.remove('active');
   });
 });
