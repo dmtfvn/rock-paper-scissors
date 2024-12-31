@@ -1,0 +1,120 @@
+@import url('./styles/fonts.css');
+@import url('./styles/colors.css');
+@import url('./styles/reset.css');
+
+html {
+  font: 16px/1.5 Roboto, Arial, sans-serif;
+  color: hsl(0, 1%, 20%);
+}
+
+body {
+  font: inherit;
+  color: inherit;
+}
+
+main {
+  background-color: var(--yt-ish-clr);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100dvh;
+}
+
+main>input {
+  background-color: var(--gy-clr);
+  color: hsl(0, 1%, 60%);
+  font-size: 0.8em;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.game-title {
+  color: hsl(0, 5%, 50%);
+  font-family: Rubik Puddles, Arial, sans-serif;
+  font-size: 1.5em;
+}
+
+.game-board {
+  display: flex;
+  justify-content: space-between;
+  width: min(400px, 100%);
+  padding: 0 10px;
+}
+
+figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+figure>img {
+  width: 35px;
+}
+
+figure>p {
+  background-color: var(--gy-clr);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 25px;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.result {
+  margin-top: auto;
+  margin-bottom: 4.5px;
+}
+
+.result,
+.game-result {
+  font-family: Fredericka the Great, Arial, sans-serif;
+}
+
+.btns-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0 10px;
+  gap: 20px;
+  width: min(400px, 100%);
+}
+
+.btns-wrapper>input {
+  background-color: var(--yt-ish-clr);
+  color: hsl(0, 6%, 78%);
+  font-family: Rubik Puddles, Arial, sans-serif;
+  font-size: 4em;
+  width: 80px;
+  aspect-ratio: 1/1;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow:
+    5px 5px 5px var(--gy-ish-clr),
+    -5px -5px 5px var(--yt-clr);
+}
+
+.btns-wrapper>input.active {
+  box-shadow:
+    5px 5px 5px var(--gy-ish-clr) inset,
+    -5px -5px 5px var(--yt-clr) inset;
+}
+
+@media (min-width: 390px) {
+  .game-title {
+    font-size: 2em;
+  }
+
+  .btns-wrapper {
+    justify-content: space-between;
+  }
+
+  .btns-wrapper>input {
+    width: 100px;
+    height: 100px;
+  }
+}

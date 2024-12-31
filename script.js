@@ -100,7 +100,7 @@ function playGame(playerMove) {
   renderGameScore();
 }
 
-const resetButton = document.querySelector('.js-reset-button');
+const resetButton = document.querySelector('main>input');
 resetButton.addEventListener('click', () => {
   gameScore.wins = 0;
   gameScore.losses = 0;
@@ -112,12 +112,12 @@ resetButton.addEventListener('click', () => {
   renderGameScore();
 });
 
-const mainButtons = document.querySelectorAll('.js-main-button');
-mainButtons.forEach((button) => {
-  button.addEventListener('mousedown', () => {
-    button.classList.add('active');
+const mainBtns = document.querySelectorAll('.btns-wrapper>input');
+mainBtns.forEach(el => {
+  el.addEventListener('mousedown', () => {
+    el.classList.add('active');
 
-    const player = button.textContent;
+    const player = el.value;
 
     if (player === 'R') {
       playGame('rock');
@@ -128,7 +128,7 @@ mainButtons.forEach((button) => {
     }
   });
 
-  button.addEventListener('mouseup', () => {
-    button.classList.remove('active');
+  el.addEventListener('mouseup', () => {
+    el.classList.remove('active');
   });
 });

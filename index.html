@@ -4,48 +4,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Rock Paper Scissors</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&family=Spicy+Rice&display=swap" rel="stylesheet">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="main.css">
+  <script src="script.js" type="module"></script>
 </head>
 
 <body>
-  <p class="game-title">Rock Paper Scissors</p>
-  <div class="game-board js-game-board">
-    <div class="player-result-computer">
-      <div class="avatar">
+  <main>
+    <p class="game-title">Rock Paper Scissors</p>
+
+    <div class="game-board js-game-board">
+      <figure>
         <img src="icons/player.png">
         <p class="player-choice"></p>
-      </div>
+      </figure>
+
       <p class="result"></p>
-      <div class="avatar">
+
+      <figure>
         <img src="icons/computer.png">
         <p class="computer-choice"></p>
-      </div>
+      </figure>
     </div>
-  </div>
-  <p class="game-result">
-    Wins <span class="wins"></span> ~ Losses <span class="losses"></span> ~ Ties <span class="ties"></span>
-  </p>
-  <div class="main-button-wrapper">
-    <button class="js-main-button">R</button>
-    <button class="js-main-button">P</button>
-    <button class="js-main-button">S</button>
-  </div>
-  <button class="js-reset-button">Reset Score</button>
+
+    <p class="game-result">
+      Wins <span class="wins"></span> ~ Losses <span class="losses"></span> ~ Ties <span class="ties"></span>
+    </p>
+
+    <div class="btns-wrapper">
+      <input type="button" value="R">
+      <input type="button" value="P">
+      <input type="button" value="S">
+    </div>
+
+    <input type="button" value="Reset Score">
+  </main>
 </body>
 
 </html>
