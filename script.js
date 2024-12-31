@@ -15,9 +15,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 const gameBtns = document.querySelectorAll('.game-btns>input');
 gameBtns.forEach(el => {
-  el.addEventListener('mousedown', () => {
-    el.classList.add('active');
-
+  el.addEventListener('click', () => {
     const player = el.value;
 
     if (player === 'R') {
@@ -27,18 +25,6 @@ gameBtns.forEach(el => {
     } else if (player === 'S') {
       playGame('scissors', gameScore);
     }
-  });
-
-  window.addEventListener('mouseup', () => {
-    el.classList.remove('active');
-  });
-
-  el.addEventListener('touchstart', () => {
-    el.classList.add('active');
-  });
-
-  window.addEventListener('touchend', () => {
-    el.classList.remove('active');
   });
 });
 
