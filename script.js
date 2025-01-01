@@ -14,31 +14,31 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 const gameBtns = document.querySelectorAll('.game-btns>input');
-gameBtns.forEach(el => {
-  el.addEventListener('mousedown', () => {
-    el.classList.add('active');
+gameBtns.forEach(elem => {
+  elem.addEventListener('mousedown', () => {
+    elem.classList.add('active');
 
-    const player = el.value;
+    const btn = elem.value;
 
-    if (player === 'R') {
+    if (btn === 'R') {
       playGame('rock', gameScore);
-    } else if (player === 'P') {
+    } else if (btn === 'P') {
       playGame('paper', gameScore);
-    } else if (player === 'S') {
+    } else if (btn === 'S') {
       playGame('scissors', gameScore);
     }
   });
 
   window.addEventListener('mouseup', () => {
-    el.classList.remove('active');
+    elem.classList.remove('active');
   });
 
-  el.addEventListener('touchstart', () => {
-    el.classList.add('active');
+  elem.addEventListener('touchstart', () => {
+    elem.classList.add('active');
   });
 
   window.addEventListener('touchend', () => {
-    el.classList.remove('active');
+    elem.classList.remove('active');
   });
 });
 

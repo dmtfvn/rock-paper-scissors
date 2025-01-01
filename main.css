@@ -33,7 +33,7 @@ main>input {
 
 .game-title {
   color: hsl(0, 5%, 50%);
-  font-family: Rubik Puddles, Arial, sans-serif;
+  font-family: 'Rubik Puddles', Arial, sans-serif;
   font-size: 1.5em;
 }
 
@@ -68,7 +68,7 @@ figure>p {
 
 .result,
 .game-result {
-  font-family: Fredericka the Great, Arial, sans-serif;
+  font-family: 'Fredericka the Great', Georgia, serif;
 }
 
 .game-btns {
@@ -82,7 +82,7 @@ figure>p {
 .game-btns>input {
   background-color: var(--yt-ish-clr);
   color: hsl(0, 6%, 78%);
-  font-family: Rubik Puddles, Arial, sans-serif;
+  font-family: 'Rubik Puddles', Arial, sans-serif;
   font-size: 4em;
   width: 80px;
   aspect-ratio: 1/1;
