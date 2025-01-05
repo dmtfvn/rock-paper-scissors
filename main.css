@@ -85,7 +85,7 @@ figure>p {
   font-family: 'Rubik Puddles', Arial, sans-serif;
   font-size: 4em;
   width: 80px;
-  aspect-ratio: 1/1;
+  aspect-ratio: 1 / 1;
   border: none;
   border-radius: 20px;
   cursor: pointer;
