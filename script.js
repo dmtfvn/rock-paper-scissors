@@ -41,14 +41,10 @@ gameBtns.forEach(elem => {
 
   elem.addEventListener('touchstart', () => {
     elem.classList.add('active');
-
-    player.style.color = 'hsl(240, 20%, 97%)';
   });
 
   window.addEventListener('touchend', () => {
     elem.classList.remove('active');
-
-    player.style.color = 'hsl(0, 1%, 20%)';
   });
 });
 
