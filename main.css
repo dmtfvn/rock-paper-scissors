@@ -23,8 +23,8 @@ main {
 
 main>input {
   background-color: var(--gy-clr);
-  color: hsl(0, 1%, 60%);
   font-size: 0.8em;
+  color: hsl(0, 1%, 60%);
   padding: 5px 10px;
   border: none;
   border-radius: 12px;
@@ -32,9 +32,9 @@ main>input {
 }
 
 .game-title {
-  color: hsl(0, 5%, 50%);
   font-family: 'Rubik Puddles', Arial, sans-serif;
   font-size: 1.5em;
+  color: hsl(0, 5%, 50%);
 }
 
 .game-board {
@@ -81,9 +81,9 @@ figure>p {
 
 .game-btns>input {
   background-color: var(--yt-ish-clr);
-  color: hsl(0, 6%, 78%);
   font-family: 'Rubik Puddles', Arial, sans-serif;
   font-size: 4em;
+  color: hsl(0, 6%, 78%);
   width: 80px;
   aspect-ratio: 1 / 1;
   border: none;

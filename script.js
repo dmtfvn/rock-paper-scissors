@@ -7,6 +7,8 @@ import { playGame } from './game/playGame.js';
 
 const data = localStorage.getItem('score');
 
+const player = document.querySelector('.player-choice');
+
 const gameScore = JSON.parse(data) || { wins: 0, losses: 0, ties: 0 };
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -27,10 +29,14 @@ gameBtns.forEach(elem => {
     } else if (btn === 'S') {
       playGame('scissors', gameScore);
     }
+
+    player.style.color = 'hsl(240, 20%, 97%)';
   });
 
   window.addEventListener('mouseup', () => {
     elem.classList.remove('active');
+
+    player.style.color = 'hsl(0, 1%, 20%)';
   });
 
   elem.addEventListener('touchstart', () => {
